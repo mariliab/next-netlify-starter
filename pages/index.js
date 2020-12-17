@@ -1,23 +1,42 @@
-import Head from 'next/head'
-import Header from '@components/Header'
-import Footer from '@components/Footer'
+import Head from "next/head";
+import Header from "@components/Header";
+import Footer from "@components/Footer";
+import StartPage from "@components/StartPage";
 
-export default function Home() {
-  return (
-    <div className="container">
-      <Head>
-        <title>Next.js Starter!</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
+const space = process.env.NEXT_PUBLIC_CONTENTFUL_SPACE_ID;
+const accessToken = process.env.NEXT_PUBLIC_CONTENTFUL_ACCESS_TOKEN;
 
-      <main>
-        <Header title="Welcome to my app!" />
-        <p className="description">
-          Get started by editing <code>pages/index.js</code>
-        </p>
-      </main>
+const client = require("contentful").createClient({
+  space: space,
+  accessToken: accessToken,
+});
 
-      <Footer />
-    </div>
-  )
+export async function getStaticProps() {
+  const entries = await client.getEntries({
+    content_type: "startPage",
+    include: 5,
+  });
+
+  if (!entries.items) {
+    console.log(`Error getting Entries for ${contentType.name}.`);
+  }
+
+  const startPageData = [];
+
+  entries.items[0].fields.content.map((item) => {
+    if (item?.sys?.contentType?.sys?.id) {
+      startPageData.push({
+        id: item?.sys?.contentType?.sys?.id,
+        content: item.fields,
+      });
+    }
+  });
+
+  return {
+    props: {
+      entries: startPageData,
+    },
+  };
 }
+
+export default StartPage;

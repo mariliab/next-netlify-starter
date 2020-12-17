@@ -1,11 +1,22 @@
-import styles from './Footer.module.css'
+import Link from "next/link";
+import styled from "styled-components";
+
+const Title = styled.h2`
+  color: white;
+`;
+
+const Container = styled.div`
+  background: rgba(0, 0, 0, 0.8);
+  min-height: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
 
 export default function Footer() {
   return (
-    <>
-      <footer className={styles.footer}>
-        Made with <img src="/netliheart.svg" alt="Netlify Logo" className={styles.logo} /> for you
-      </footer>
-    </>
-  )
+    <Container>
+      <Title>Get in touch</Title>
+    </Container>
+  );
 }
