@@ -3,6 +3,7 @@ import Head from "next/head";
 import Link from "next/link";
 import styled from "styled-components";
 import FeaturedImage from "components/FeaturedImage";
+import TechnologyBlock from "components/TechnologyBlock";
 
 const Container = styled.div`
   min-height: 90vh;
@@ -41,6 +42,7 @@ const PortfolioPage = ({ portfolioItem }) => {
           <Title>{portfolioItem?.fields.title}</Title>
           <Category>{portfolioItem?.fields.category}</Category>
         </TitleBlock>
+        <TechnologyBlock data={{ ...portfolioItem?.fields?.technologyBlock }} />
       </Container>
     </>
   );
