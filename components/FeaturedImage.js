@@ -2,9 +2,11 @@ import Link from "next/link";
 import styled from "styled-components";
 
 const Background = styled.div`
-  min-height: 90vh;
+  min-height: 300px;
   background-image: url(${(props) =>
     props.backgroundImage ? props.backgroundImage : ""});
+  background-size: cover;
+  background-position: center;
 `;
 
 const Container = styled.div`
@@ -22,15 +24,12 @@ const SubTitle = styled.h2`
   color: white;
 `;
 
-const Hero = ({ data }) => {
+const FeaturedImage = ({ data }) => {
   return (
-    <Background backgroundImage={data.backgroundImage?.fields?.file?.url}>
-      <Container>
-        <Title>{data?.title} </Title>
-        <SubTitle>{data?.subtitle}</SubTitle>
-      </Container>
+    <Background backgroundImage={data.fields?.file?.url}>
+      <Container></Container>
     </Background>
   );
 };
 
-export default Hero;
+export default FeaturedImage;

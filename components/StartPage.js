@@ -8,14 +8,14 @@ import PortfolioBlock from "@components/PortfolioBlock";
 
 const Container = styled.div``;
 
-const StartPage = ({ entries }) => {
-  return (
+const StartPage = ({ startPageData }) => {
+  return startPageData ? (
     <>
       <Head>
         <title>Marilia Bognandi</title>
       </Head>
       <Container>
-        {entries.map((item, index) => {
+        {startPageData.map((item, index) => {
           switch (item.id) {
             case "hero":
               return (
@@ -29,6 +29,8 @@ const StartPage = ({ entries }) => {
         })}
       </Container>
     </>
+  ) : (
+    "No data"
   );
 };
 

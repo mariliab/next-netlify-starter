@@ -32,10 +32,13 @@ export async function getStaticProps() {
     }
   });
 
+  console.log("Start page data: " + JSON.stringify(startPageData, null, 2));
+
   return {
     props: {
-      entries: startPageData,
+      startPageData: startPageData,
     },
+    revalidate: 10,
   };
 }
 
