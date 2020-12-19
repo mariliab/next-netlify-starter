@@ -42,19 +42,18 @@ const SubTitle = styled.h4`
 `;
 
 const PortfolioBlockItem = ({ data }) => {
-  console.log("Portfolio item: " + data.fields.title);
   return (
     <Link
       href={{
-        pathname: "/portfolio/" + data.fields.slug,
+        pathname: "/portfolio/" + data?.fields?.slug,
       }}
     >
       <Background
-        backgroundImage={data.fields?.featuredImage?.fields?.file?.url}
+        backgroundImage={data?.fields?.featuredImage?.fields?.file?.url}
       >
         <Container>
-          <Title>{data.fields.title}</Title>
-          <SubTitle>{data.fields.category}</SubTitle>
+          <Title>{data?.fields?.title}</Title>
+          <SubTitle>{data?.fields?.category}</SubTitle>
         </Container>
       </Background>
     </Link>

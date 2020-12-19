@@ -1,4 +1,3 @@
-import Link from "next/link";
 import styled from "styled-components";
 import PortfolioBlockItem from "components/PortfolioBlockItem";
 
@@ -38,8 +37,7 @@ const SubTitle = styled.h3`
 `;
 
 const PortfolioBlock = ({ data }) => {
-  console.log("PORTFOLIO DATA: " + JSON.stringify(data, null, 2));
-  return (
+  return data ? (
     <Container>
       <PortfolioBlockItemContainer>
         <TitleBlock>
@@ -51,6 +49,8 @@ const PortfolioBlock = ({ data }) => {
         })}
       </PortfolioBlockItemContainer>
     </Container>
+  ) : (
+    "No data"
   );
 };
 

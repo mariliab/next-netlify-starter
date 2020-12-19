@@ -1,7 +1,4 @@
-import Head from "next/head";
-import Header from "@components/Header";
-import Footer from "@components/Footer";
-import StartPage from "@components/StartPage";
+import StartPage from "../components/StartPage";
 
 const space = process.env.NEXT_PUBLIC_CONTENTFUL_SPACE_ID;
 const accessToken = process.env.NEXT_PUBLIC_CONTENTFUL_ACCESS_TOKEN;
@@ -31,8 +28,6 @@ export async function getStaticProps() {
       });
     }
   });
-
-  console.log("Start page data: " + JSON.stringify(startPageData, null, 2));
 
   return {
     props: {
