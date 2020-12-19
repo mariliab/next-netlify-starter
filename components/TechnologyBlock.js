@@ -2,18 +2,18 @@ import Link from "next/link";
 import styled from "styled-components";
 import TechnologyBlockItem from "@components/TechnologyBlockItem";
 
-const Container = styled.div``;
+const Container = styled.div`
+  padding: 3rem 0;
+`;
 
 const TechnologyBlockItemContainer = styled.div`
   display: flex;
-  justify-content: space-between;
-  max-width: 50%;
+  flex-wrap: wrap;
 `;
 
-const Title = styled.h3``;
+const Title = styled.h2``;
 
 const TechnologyBlock = ({ data }) => {
-  console.log("techblock: " + JSON.stringify(data, null, 2));
   return (
     <Container>
       <Title>{data?.fields?.headline}</Title>

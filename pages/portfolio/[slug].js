@@ -11,14 +11,17 @@ const client = require("contentful").createClient({
 });
 
 export async function getServerSideProps({ params }) {
-  let data = await client.getEntries({
+  let entry = await client.getEntries({
     content_type: "portfolioItem",
     "fields.slug": params.slug,
   });
 
+  //const portfolioItemData = Object.entries(entry.items[0].fields);
+  const portfolioItemData = entry.items[0].fields;
+
   return {
     props: {
-      portfolioItem: data.items[0],
+      portfolioItem: portfolioItemData,
     },
   };
 }
