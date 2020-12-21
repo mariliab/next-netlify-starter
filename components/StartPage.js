@@ -12,7 +12,9 @@ const StartPage = ({ startPageData }) => {
   return startPageData ? (
     <>
       <Head>
-        <title>Marilia Bognandi</title>
+        <title>
+          Marilia Bognandi - Web developer / UX / UI Designer / Photographer
+        </title>
       </Head>
       <Container>
         {startPageData.map((item, index) => {
