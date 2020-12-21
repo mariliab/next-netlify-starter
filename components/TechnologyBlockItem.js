@@ -6,9 +6,6 @@ const Container = styled.div`
   padding: 1rem;
   margin-bottom: 0.25rem;
   margin-right: 0.25rem;
-  @media (min-width: 992px) {
-    margin-bottom: 0;
-  }
 `;
 
 const Title = styled.h4`

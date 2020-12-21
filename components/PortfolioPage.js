@@ -8,42 +8,59 @@ import TechnologyBlock from "components/TechnologyBlock";
 const Container = styled.div`
   min-height: 90vh;
   background: white;
-  padding: 0 1rem;
-
+  display: flex;
+  flex-direction: column;
   @media (min-width: 992px) {
     padding: 0;
+    flex-direction: row;
   }
 `;
 
 const ContentBlock = styled.div`
   margin: 0 auto;
-  @media (min-width: 992px) {
-    padding: 0 1rem;
-    max-width: 50%;
-    transform: translateY(-25%);
-  }
 `;
 
 const TitleBlock = styled.div`
   background: white;
-  padding: 1rem;
-  text-align: center;
+  padding-bottom: 1rem;
   margin: 0 auto;
-
-  @media (min-width: 992px) {
-    transform: translateY(-50%);
-    max-width: 50%;
-  }
 `;
 
-const Title = styled.h1``;
-const Category = styled.h3``;
-const Date = styled.h4``;
+const Title = styled.h1`
+  text-align: center;
+  line-height: 1.2;
+  margin: 0 0 2rem 0;
+`;
+const Category = styled.p`
+  text-align: center;
+  margin: 0 0 1rem 0;
+`;
+const Date = styled.p`
+  text-align: center;
+  margin: 0 0 2rem 0;
+  text-decoration: underline;
+`;
+const ShortDescription = styled.p`
+  font-size: 24px;
+  font-weight: bold;
+  line-height: 1.4;
+  margin: 0;
+`;
 
 const Text = styled.p`
-  font-size: 150%;
+  font-size: 16px;
   line-height: 1.4;
   text-align: justify;
+  margin: 0;
+`;
+
+const Block = styled.div`
+  width: 100%;
+  padding: 1rem;
+  @media (min-width: 992px) {
+    width: 33.3333333%;
+    padding: 3rem;
+  }
 `;
 
 const PortfolioPage = ({ portfolioItem }) => {
@@ -55,21 +72,26 @@ const PortfolioPage = ({ portfolioItem }) => {
       <Head>
         <title>Marilia Bognandi</title>
       </Head>
-      <FeaturedImage data={{ ...portfolioItem?.featuredImage }} />
       <Container>
-        <TitleBlock>
-          <Title>{portfolioItem?.title}</Title>
-          <Category>{portfolioItem?.category}</Category>
-          <Date>{portfolioItem?.date}</Date>
-        </TitleBlock>
-        <ContentBlock>
-          {portfolioItem?.description?.content.map((item, index) => {
-            if (item.nodeType == "paragraph") {
-              return <Text key={index}>{item.content[0].value}</Text>;
-            }
-          })}
-          <TechnologyBlock data={{ ...portfolioItem?.technologyBlock }} />
-        </ContentBlock>
+        <FeaturedImage data={{ ...portfolioItem?.featuredImage }} />
+        <Block>
+          <TitleBlock>
+            <Title>{portfolioItem?.title}</Title>
+            <Category>{portfolioItem?.category}</Category>
+            <Date>{portfolioItem?.date}</Date>
+            <ShortDescription>
+              {portfolioItem?.shortDescription}
+            </ShortDescription>
+          </TitleBlock>
+          <ContentBlock>
+            {portfolioItem?.description?.content.map((item, index) => {
+              if (item.nodeType == "paragraph") {
+                return <Text key={index}>{item.content[0].value}</Text>;
+              }
+            })}
+            <TechnologyBlock data={{ ...portfolioItem?.technologyBlock }} />
+          </ContentBlock>
+        </Block>
       </Container>
     </>
   );

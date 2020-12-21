@@ -3,7 +3,7 @@ import styled from "styled-components";
 import TechnologyBlockItem from "@components/TechnologyBlockItem";
 
 const Container = styled.div`
-  padding: 3rem 0;
+  padding: 1rem 0;
 `;
 
 const TechnologyBlockItemContainer = styled.div`

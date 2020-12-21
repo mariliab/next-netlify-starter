@@ -21,10 +21,7 @@ const BuiltWithContainer = styled.div`
   color: white;
   display: flex;
   font-size: 75%;
-`;
-const BuiltWithItem = styled.div`
-  margin: 0 1rem;
-  font-weight: bold;
+  font-style: italic;
 `;
 
 const Container = styled.div`
@@ -44,10 +41,7 @@ export default function Footer() {
         marilia.bognandi@gmail.com
       </Email>
       <BuiltWithContainer>
-        Built with
-        <BuiltWithItem>Next.js</BuiltWithItem>
-        <BuiltWithItem>React.js</BuiltWithItem>
-        <BuiltWithItem>Contentful.js</BuiltWithItem>
+        Built with Next.js, React.js, Contentful CMS
       </BuiltWithContainer>
     </Container>
   );

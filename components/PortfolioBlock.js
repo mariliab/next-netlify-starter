@@ -22,8 +22,8 @@ const TitleBlock = styled.div`
   width: 100%;
   min-height: 300px;
   @media (min-width: 768px) {
-    width: 33.33333%;
-    min-height: 500px;
+    width: 50%;
+    min-height: 600px;
   }
 `;
 
