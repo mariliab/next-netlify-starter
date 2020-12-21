@@ -41,7 +41,7 @@ export default function Footer() {
         marilia.bognandi@gmail.com
       </Email>
       <BuiltWithContainer>
-        Built with Next.js, React.js, Contentful CMS
+        Built with Next.js, React.js, Contentful CMS, deployed on Vercel.
       </BuiltWithContainer>
     </Container>
   );
