@@ -9,40 +9,36 @@ const Header = styled.header`
   background: white;
   display: flex;
   justify-content: space-between;
-  }
 
   a {
-      color: black;
-      text-decoration: none;
+    color: black;
+    text-decoration: none;
   }
 `;
 
-const NavItemGroup = styled.div``;
+const NavItemGroup = styled.div`
+  display: flex;
+`;
+
+const LinkWrapper = styled.div`
+  margin-left: 1rem;
+`;
 
 const Navbar = ({ data }) => {
-  const [isScrolling, setIsScrolling] = React.useState(false);
-
-  const handleScroll = () => {
-    const offset = window.scrollY;
-    if (offset > document.querySelector("header").offsetHeight) {
-      setIsScrolling(true);
-    } else {
-      setIsScrolling(false);
-    }
-  };
-
-  useEffect(() => {
-    window.addEventListener("scroll", handleScroll);
-  });
-
-  console.log("Is not scrolling? -> " + isScrolling);
-
   return (
     <>
-      <Header id="header" sticky={isScrolling}>
-        <Link href="/">M.B portfolio</Link>
+      <Header id="header">
+        <Link href="/">Marilia Bognandi</Link>
         <NavItemGroup>
-          <Link href="/about">About</Link>
+          <LinkWrapper>
+            <Link href="/portfolio">Portfolio</Link>
+          </LinkWrapper>
+          <LinkWrapper>
+            <Link href="/about">About</Link>
+          </LinkWrapper>
+          <LinkWrapper>
+            <a href="mailto:marilia.bognandi@gmail.com">Contact</a>
+          </LinkWrapper>
         </NavItemGroup>
       </Header>
     </>
