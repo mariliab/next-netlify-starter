@@ -73,7 +73,6 @@ const ShortDescription = styled.h4`
 `;
 
 const PortfolioBlockItem = ({ data }) => {
-  console.log("PortfolioBlockItem data -> " + JSON.stringify(data, null, 2));
   return (
     <Link
       href={{
