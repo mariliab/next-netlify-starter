@@ -1,6 +1,4 @@
 import styled from "styled-components";
-import PortfolioBlockItem from "components/PortfolioBlockItem";
-import Image from "next/image";
 
 const Container = styled.div``;
 
@@ -39,24 +37,19 @@ const SubTitle = styled.h3`
   margin: 0;
 `;
 
-const ArrowIcon = styled.img``;
+const Image = styled.img`
+  width: 100%;
+`;
 
-const PortfolioBlock = ({ data }) => {
+const PortfolioPageImages = ({ data }) => {
+  //   console.log(
+  //     "Portfolio item -> " + JSON.stringify(data[0].fields.file.url, null, 2)
+  //   );
   return data ? (
     <Container>
-      <PortfolioBlockItemContainer>
-        <TitleBlock>
-          <Title>{data?.headline}</Title>
-          <SubTitle>{data?.subheadline}</SubTitle>
-        </TitleBlock>
-        {data?.portfolioItemList.map((item, index) => {
-          return <PortfolioBlockItem key={index} data={{ ...item }} />;
-        })}
-      </PortfolioBlockItemContainer>
+      <Image src={data[0]?.fields?.file?.url} />
     </Container>
-  ) : (
-    "No data"
-  );
+  ) : null;
 };
 
-export default PortfolioBlock;
+export default PortfolioPageImages;

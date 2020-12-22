@@ -12,6 +12,17 @@ body {
 h1 {
   font-family: "Playfair Display", serif;
 }
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+div,
+a,
+span {
+  color: #161413;
+}
 
 * {
   box-sizing: border-box;

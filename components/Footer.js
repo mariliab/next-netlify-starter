@@ -12,13 +12,13 @@ const Email = styled.a`
     font-size: 300%;
   }
   :hover {
-    color: lightpink;
+    color: #ddcdc1;
   }
 `;
 
 const BuiltWithContainer = styled.div`
   margin-top: 3rem;
-  color: white;
+  color: #ddcdc1;
   display: flex;
   font-size: 75%;
   font-style: italic;

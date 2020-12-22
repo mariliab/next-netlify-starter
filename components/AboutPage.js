@@ -12,6 +12,10 @@ const Container = styled.div`
   }
 `;
 
+const Background = styled.div`
+  background: #ddcdc1;
+`;
+
 const Title = styled.h1`
   text-align: center;
   line-height: 1.2;
@@ -26,20 +30,22 @@ const AboutPage = ({ data }) => {
       <Head>
         <title>Marilia Bognandi - About me</title>
       </Head>
-      <Container>
-        <Title>About me</Title>
-        <Text>
-          My name is Marilia Bognandi and im a frontend developer / ux-designer
-          going fullstack developer. I love working with new ideas and to think
-          outside the box.<br></br>
-          <br></br> I love learning new things, whether it's frontend, ux, ui,
-          graphic design, photography, marketing, handling clients, business
-          strategy, I want to know it all!<br></br>
-          <br></br> Because my dream is to build a user friendly and scalable
-          startup, and I'm on a mission to gather any knowledge that will get me
-          there.
-        </Text>
-      </Container>
+      <Background>
+        <Container>
+          <Title>About me</Title>
+          <Text>
+            My name is Marilia Bognandi and im a frontend developer /
+            ux-designer going fullstack developer. I love working with new ideas
+            and to think outside the box.<br></br>
+            <br></br> I love learning new things, whether it's frontend, ux, ui,
+            graphic design, photography, marketing, handling clients, business
+            strategy, I want to know it all!<br></br>
+            <br></br> Because my dream is to build a user friendly and scalable
+            startup, and I'm on a mission to gather any knowledge that will get
+            me there.
+          </Text>
+        </Container>
+      </Background>
     </>
   );
 };

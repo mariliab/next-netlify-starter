@@ -10,9 +10,7 @@ const Background = styled.div`
   background-position: initial;
   background-repeat: no-repeat;
   background-size: cover;
-  @media (min-width: 992px) {
-    background-position: center;
-  }
+  background-position: center;
 `;
 
 const Container = styled.div`
@@ -32,7 +30,7 @@ const TextContent = styled.div`
 `;
 
 const Title = styled.h1`
-  color: white;
+  color: #ddcdc1;
   font-size: 400%;
   line-height: 1.2;
 `;

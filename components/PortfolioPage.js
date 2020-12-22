@@ -4,6 +4,11 @@ import Link from "next/link";
 import styled from "styled-components";
 import FeaturedImage from "components/FeaturedImage";
 import TechnologyBlock from "components/TechnologyBlock";
+import PortfolioPageImages from "components/PortfolioPageImages";
+
+const Background = styled.div`
+  background: #ddcdc1;
+`;
 
 const Container = styled.div`
   min-height: 90vh;
@@ -21,7 +26,6 @@ const ContentBlock = styled.div`
 `;
 
 const TitleBlock = styled.div`
-  background: white;
   padding-bottom: 1rem;
   margin: 0 auto;
 `;
@@ -29,16 +33,20 @@ const TitleBlock = styled.div`
 const Title = styled.h1`
   text-align: center;
   line-height: 1.2;
-  margin: 0 0 2rem 0;
+  margin: 0;
+  font-size: 42px;
+  font-weight: bold;
+  padding-bottom: 1rem;
 `;
+
 const Category = styled.p`
   text-align: center;
+  letter-spacing: 1px;
   margin: 0 0 1rem 0;
 `;
 const Date = styled.p`
   text-align: center;
-  margin: 0 0 2rem 0;
-  text-decoration: underline;
+  margin: 0 0 3rem 0;
 `;
 const ShortDescription = styled.p`
   font-size: 24px;
@@ -46,9 +54,12 @@ const ShortDescription = styled.p`
   line-height: 1.4;
   margin: 0;
 `;
+const Line = styled.span`
+  border-bottom: 5px solid #ddcdc1;
+`;
 
 const Text = styled.p`
-  font-size: 16px;
+  font-size: 18px;
   line-height: 1.4;
   text-align: justify;
   margin: 0;
@@ -58,9 +69,14 @@ const Block = styled.div`
   width: 100%;
   padding: 1rem;
   @media (min-width: 992px) {
-    width: 33.3333333%;
+    width: 50%;
     padding: 3rem;
   }
+`;
+
+const Image = styled.img`
+  margin: 5rem 0;
+  width: 100%;
 `;
 
 const PortfolioPage = ({ portfolioItem }) => {
@@ -80,7 +96,7 @@ const PortfolioPage = ({ portfolioItem }) => {
             <Category>{portfolioItem?.category}</Category>
             <Date>{portfolioItem?.date}</Date>
             <ShortDescription>
-              {portfolioItem?.shortDescription}
+              <Line>{portfolioItem?.shortDescription}</Line>
             </ShortDescription>
           </TitleBlock>
           <ContentBlock>
@@ -93,6 +109,13 @@ const PortfolioPage = ({ portfolioItem }) => {
           </ContentBlock>
         </Block>
       </Container>
+      {portfolioItem?.projectImages && (
+        <Background>
+          {/* <Image src={portfolioItem?.featuredImage.fields?.file?.url} /> */}
+          {}
+          <PortfolioPageImages data={{ ...portfolioItem?.projectImages }} />
+        </Background>
+      )}
     </>
   );
 };

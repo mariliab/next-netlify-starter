@@ -38,8 +38,15 @@ const Container = styled.div`
   :hover {
     background: rgba(0, 0, 0, 0.85);
   }
-  :hover h4 {
-    opacity: 1;
+  :hover h5 {
+    color: black;
+    display: block;
+    background: #ddcdc1;
+    text-align: center;
+    margin: 1rem auto 0 auto;
+    letter-spacing: 1px;
+    width: fit-content;
+    padding: 3px 5px 1px 5px;
   }
 `;
 
@@ -64,12 +71,12 @@ const SubTitle = styled.h4`
   line-height: 1.4;
 `;
 
-const ShortDescription = styled.h4`
+const ShortDescription = styled.h5`
   color: white;
   margin: 2rem 0 0 0;
   line-height: 1.4;
-  opacity: 0;
-  transition: opacity 1s;
+  display none;
+  transition: display 1s;
 `;
 
 const PortfolioBlockItem = ({ data }) => {
@@ -86,9 +93,7 @@ const PortfolioBlockItem = ({ data }) => {
           <TextBlock>
             <Title>{data?.fields?.title}</Title>
             <SubTitle>{data?.fields?.category}</SubTitle>
-            <ShortDescription>
-              {data?.fields?.shortDescription}
-            </ShortDescription>
+            <ShortDescription>read more</ShortDescription>
           </TextBlock>
         </Container>
       </Background>
