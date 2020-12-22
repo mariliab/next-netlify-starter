@@ -37,7 +37,7 @@ const Navbar = ({ data }) => {
             <Link href="/about">About</Link>
           </LinkWrapper>
           <LinkWrapper>
-            <a href="mailto:marilia.bognandi@gmail.com">Contact</a>
+            <a href="mailto:marilia@morpheus.se">Contact</a>
           </LinkWrapper>
         </NavItemGroup>
       </Header>

@@ -37,9 +37,7 @@ export default function Footer() {
   return (
     <Container>
       <Title>Get in touch</Title>
-      <Email href="mailto:marilia.bognandi@gmail.com">
-        marilia.bognandi@gmail.com
-      </Email>
+      <Email href="mailto:marilia@morpheus.se">marilia@morpheus.se</Email>
       <BuiltWithContainer>
         Built with Next.js, React.js, Contentful CMS, deployed on Vercel.
       </BuiltWithContainer>
