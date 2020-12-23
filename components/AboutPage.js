@@ -28,6 +28,10 @@ const AboutPage = ({ data }) => {
   return (
     <>
       <Head>
+        <meta
+          name="viewport"
+          content="width=device-width, initial-scale=1"
+        ></meta>
         <title>Marilia Bognandi - About me</title>
       </Head>
       <Background>

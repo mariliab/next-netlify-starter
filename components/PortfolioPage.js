@@ -86,7 +86,57 @@ const PortfolioPage = ({ portfolioItem }) => {
   return (
     <>
       <Head>
-        <title>Marilia Bognandi</title>
+        <meta
+          name="viewport"
+          content="width=device-width, initial-scale=1"
+        ></meta>
+        {portfolioItem?.metaTags && (
+          <>
+            <title>
+              {portfolioItem.metaTags.fields.title
+                ? portfolioItem.metaTags.fields.title
+                : "Marilia Bognandi portfolio - Frontend developer in Stockholm."}
+            </title>
+            <meta
+              property="og:title"
+              content={
+                portfolioItem.metaTags.fields.ogTitle
+                  ? portfolioItem.metaTags.fields.ogTitle
+                  : "Marilia Bognandi portfolio - Frontend developer in Stockholm."
+              }
+            ></meta>
+            <meta
+              name="description"
+              content={
+                portfolioItem.metaTags.fields.description
+                  ? portfolioItem.metaTags.fields.description
+                  : "Portfolio of Marilia Bognandi - Web developer (with a focus on frontend), ux-/ui-designer and photographer in Stockholm."
+              }
+            ></meta>
+            <meta
+              property="og:description"
+              content={
+                portfolioItem.metaTags.fields.ogDescription
+                  ? portfolioItem.metaTags.fields.ogDescription
+                  : "Portfolio of Marilia Bognandi - Web developer (with a focus on frontend), ux-/ui-designer and photographer in Stockholm."
+              }
+            ></meta>
+            <meta
+              name="keywords"
+              content={
+                portfolioItem.metaTags.fields.keywords
+                  ? portfolioItem.metaTags.fields.keywords
+                  : "Web developer, frontend developer, front end developer, fullstack developer, fullstack, frontend, ux designer, ui designer, photographer."
+              }
+            ></meta>
+          </>
+        )}
+        <meta name="robots" content="index, follow"></meta>
+        <meta
+          http-equiv="Content-Type"
+          content="text/html; charset=utf-8"
+        ></meta>
+        <meta name="language" content="English"></meta>
       </Head>
       <Container>
         <FeaturedImage data={{ ...portfolioItem?.featuredImage }} />
