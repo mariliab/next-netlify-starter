@@ -3,24 +3,32 @@ import styled from "styled-components";
 
 const Background = styled.div`
   width: 100%;
-  background-position: center;
-  background-size: cover;
   min-height: 300px;
   height: inherit;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  cursor: pointer;
+  overflow: hidden;
+
   @media (min-width: 768px) {
     width: 50%;
     min-height: 600px;
   }
+  :hover > div {
+    transform: scale(1.05);
+  }
+`;
+
+const Image = styled.div`
+  width: 100%;
+  height: 100%;
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  transition: all 1s;
+  cursor: pointer;
   background-image: url(${(props) =>
     props.backgroundImage ? props.backgroundImage : ""});
-  }
-  :hover {
-
   }
 `;
 
@@ -33,7 +41,7 @@ const Container = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  transition: background 1s;
+  transition: all 1s;
 
   :hover {
     background: rgba(0, 0, 0, 0.85);
@@ -76,7 +84,7 @@ const ShortDescription = styled.h5`
   margin: 2rem 0 0 0;
   line-height: 1.4;
   display none;
-  transition: display 1s;
+  transition: all 1s;
 `;
 
 const PortfolioBlockItem = ({ data }) => {
@@ -86,16 +94,16 @@ const PortfolioBlockItem = ({ data }) => {
         pathname: "/portfolio/" + data?.fields?.slug,
       }}
     >
-      <Background
-        backgroundImage={data?.fields?.featuredImage?.fields?.file?.url}
-      >
-        <Container>
-          <TextBlock>
-            <Title>{data?.fields?.title}</Title>
-            <SubTitle>{data?.fields?.category}</SubTitle>
-            <ShortDescription>read more</ShortDescription>
-          </TextBlock>
-        </Container>
+      <Background>
+        <Image backgroundImage={data?.fields?.featuredImage?.fields?.file?.url}>
+          <Container>
+            <TextBlock>
+              <Title>{data?.fields?.title}</Title>
+              <SubTitle>{data?.fields?.category}</SubTitle>
+              <ShortDescription>read more</ShortDescription>
+            </TextBlock>
+          </Container>
+        </Image>
       </Background>
     </Link>
   );
