@@ -48,12 +48,12 @@ const Container = styled.div`
   }
   :hover h5 {
     color: black;
-    display: block;
+    opacity: 1;
     background: #ddcdc1;
     text-align: center;
+    width: fit-content;
     margin: 1rem auto 0 auto;
     letter-spacing: 1px;
-    width: fit-content;
     padding: 3px 5px 1px 5px;
   }
 `;
@@ -80,11 +80,15 @@ const SubTitle = styled.h4`
 `;
 
 const ShortDescription = styled.h5`
-  color: white;
-  margin: 2rem 0 0 0;
-  line-height: 1.4;
-  display none;
-  transition: all 1s;
+  color: black;
+  opacity: 0;
+  background: #ddcdc1;
+  text-align: center;
+  width: fit-content;
+  margin: 1rem auto 0 auto;
+  letter-spacing: 1px;
+  padding: 3px 5px 1px 5px;
+  transition: all 2s;
 `;
 
 const PortfolioBlockItem = ({ data }) => {
