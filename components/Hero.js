@@ -29,7 +29,15 @@ const TextContent = styled.div`
   }
 `;
 
+const ShortText = styled.p`
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 12px;
+`;
+
 const Title = styled.h1`
+  margin-top: 0;
   color: #ddcdc1;
   font-size: 400%;
   line-height: 1.2;
@@ -49,6 +57,7 @@ const Hero = ({ data }) => {
     <Background backgroundImage={data.backgroundImage?.fields?.file?.url}>
       <Container>
         <TextContent>
+          <ShortText>{data?.shortText}</ShortText>
           <Title>{data?.title} </Title>
           <SubTitle>{data?.subtitle}</SubTitle>
         </TextContent>
