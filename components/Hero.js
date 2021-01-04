@@ -11,6 +11,10 @@ const Background = styled.div`
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
+  @media (max-width: 767px) {
+    background-image: url(${(props) =>
+      props?.mobileBackgroundImage ? props?.mobileBackgroundImage : ""});
+  }
 `;
 
 const Container = styled.div`
@@ -55,7 +59,10 @@ const SubTitle = styled.h3`
 
 const Hero = ({ data }) => {
   return (
-    <Background backgroundImage={data.backgroundImage?.fields?.file?.url}>
+    <Background
+      backgroundImage={data?.backgroundImage?.fields?.file?.url}
+      mobileBackgroundImage={data?.mobileBackgroundImage?.fields?.file?.url}
+    >
       <Container>
         <TextContent>
           <ShortText>{data?.shortText}</ShortText>
