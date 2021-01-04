@@ -6,22 +6,24 @@ import styled from "styled-components";
 import BurgerMenu from "@components/BurgerMenu";
 
 const HeaderWrapper = styled.header`
-  padding: 1rem;
   width: 100%;
   background: white;
 
   a {
+    font-weight: 300;
     color: black;
     text-decoration: none;
   }
 
   .active > a {
-    font-weight: bold;
-    text-decoration: underline;
+    font-weight: 400;
   }
 `;
 
 const DesktopHeader = styled.div`
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -30,6 +32,7 @@ const DesktopHeader = styled.div`
   }
 `;
 const MobileHeader = styled.div`
+  padding: 1rem;
   @media (min-width: 992px) {
     display: none;
   }
@@ -101,6 +104,12 @@ const MobileCategoryHeading = styled.h2`
   font-weight: bold;
   color: #9a8f87;
   letter-spacing: 1px;
+`;
+
+const Line = styled.div`
+  height: 2px;
+  width: 100%;
+  background: #ddcdc1;
 `;
 
 const Navbar = ({ data }) => {

@@ -91,7 +91,6 @@ export const Logo = styled.div`
   font-family: "Playfair Display", serif;
   font-weight: bold;
   font-size: 1.5rem;
-  cursor: pointer;
   color: #ddcdc1;
   margin-bottom: 1rem;
 

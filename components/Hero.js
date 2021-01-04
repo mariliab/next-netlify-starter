@@ -43,9 +43,10 @@ const Title = styled.h1`
   line-height: 1.2;
 `;
 
-const SubTitle = styled.h2`
+const SubTitle = styled.h3`
   color: white;
   font-size: 200%;
+  font-weight: 300;
   line-height: 1.4;
   @media (min-width: 768px) {
     font-size: 300%;

@@ -50,7 +50,7 @@ const Date = styled.p`
 `;
 const ShortDescription = styled.p`
   font-size: 24px;
-  font-weight: bold;
+  font-weight: 400;
   line-height: 1.4;
   margin: 0;
 `;
@@ -63,6 +63,7 @@ const Text = styled.p`
   line-height: 1.4;
   text-align: justify;
   margin: 0;
+  font-weight: 300;
 `;
 
 const Block = styled.div`

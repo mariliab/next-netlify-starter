@@ -77,6 +77,7 @@ const SubTitle = styled.h4`
   margin: 0;
   letter-spacing: 2px;
   line-height: 1.4;
+  font-weight: 300;
 `;
 
 const ShortDescription = styled.h5`

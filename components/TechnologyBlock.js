@@ -11,7 +11,10 @@ const TechnologyBlockItemContainer = styled.div`
   flex-wrap: wrap;
 `;
 
-const Title = styled.h2``;
+const Title = styled.h2`
+  font-size: 1rem;
+  text-transform: uppercase;
+`;
 
 const TechnologyBlock = ({ data }) => {
   return (
