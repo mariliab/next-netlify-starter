@@ -24,6 +24,7 @@ const HeaderWrapper = styled.header`
 const DesktopHeader = styled.div`
   display: flex;
   justify-content: space-between;
+  align-items: center;
   @media (max-width: 991px) {
     display: none;
   }
@@ -63,12 +64,43 @@ const NavItemGroup = styled.div`
 
 const LinkWrapper = styled.div`
   @media (max-width: 991px) {
-    margin-bottom: 1rem;
-    font-size: 200%;
+    margin-bottom: 1.5rem;
+    font-size: 1.5rem;
   }
   @media (min-width: 992px) {
     margin-left: 1rem;
+    font-size: 1.25rem;
   }
+`;
+
+const Logo = styled.div`
+  font-family: "Playfair Display", serif;
+  font-weight: bold;
+  font-size: 1.5rem;
+  cursor: pointer;
+
+  > span {
+    font-weight: 300;
+    font-family: "Josefin Sans", sans-serif;
+    color: rgba(0, 0, 0, 0.7);
+  }
+  @media (min-width: 992px) {
+    font-size: 1.75rem;
+  }
+`;
+
+const MobileLogo = styled(Logo)`
+  position: absolute;
+  top: 1rem;
+`;
+
+const MobileCategoryHeading = styled.h2`
+  font-family: "Playfair Display", serif;
+  font-size: 1rem;
+  text-transform: uppercase;
+  font-weight: bold;
+  color: #9a8f87;
+  letter-spacing: 1px;
 `;
 
 const Navbar = ({ data }) => {
@@ -78,12 +110,16 @@ const Navbar = ({ data }) => {
     <>
       <HeaderWrapper id="header">
         <DesktopHeader>
-          <Link href="/">Marilia Bognandi</Link>
+          <Link href="/">
+            <Logo>
+              MB<span> portfolio</span>
+            </Logo>
+          </Link>
           <NavItemGroup>
             <LinkWrapper
               className={router.asPath == "/portfolio" ? "active" : ""}
             >
-              <Link href="/portfolio">Portfolio</Link>
+              <Link href="/portfolio">Projects</Link>
             </LinkWrapper>
             <LinkWrapper className={router.asPath == "/about" ? "active" : ""}>
               <Link href="/about">About</Link>
@@ -95,16 +131,28 @@ const Navbar = ({ data }) => {
         </DesktopHeader>
         <MobileHeader>
           <MobileHeaderContainer>
-            <Link href="/">Marilia Bognandi</Link>
+            <Link href="/">
+              <Logo>
+                M.B<span> portfolio</span>
+              </Logo>
+            </Link>
             <BurgerMenu open={open} setOpen={setOpen} />
           </MobileHeaderContainer>
           <MobileMenuBody open={open} setOpen={setOpen}>
+            <MobileLogo>
+              <Link href="/">
+                <Logo>
+                  MB<span> portfolio</span>
+                </Logo>
+              </Link>
+            </MobileLogo>
             <NavItemGroup>
+              <MobileCategoryHeading>Content</MobileCategoryHeading>
               <LinkWrapper
                 className={router.asPath == "/portfolio" ? "active" : ""}
                 onClick={() => setOpen(!open)}
               >
-                <Link href="/portfolio">Portfolio</Link>
+                <Link href="/portfolio">Projects</Link>
               </LinkWrapper>
               <LinkWrapper
                 className={router.asPath == "/about" ? "active" : ""}
@@ -114,6 +162,30 @@ const Navbar = ({ data }) => {
               </LinkWrapper>
               <LinkWrapper onClick={() => setOpen(!open)}>
                 <a href="mailto:marilia@morpheus.se">Contact</a>
+              </LinkWrapper>
+            </NavItemGroup>
+            <NavItemGroup>
+              <MobileCategoryHeading>Social</MobileCategoryHeading>
+              <LinkWrapper>
+                <a
+                  href="https://www.linkedin.com/in/mariliabognandi/"
+                  target="_blank"
+                >
+                  LinkedIn
+                </a>
+              </LinkWrapper>
+              <LinkWrapper>
+                <a
+                  href="https://www.instagram.com/bognandiphotography/"
+                  target="_blank"
+                >
+                  Instagram
+                </a>
+              </LinkWrapper>
+              <LinkWrapper>
+                <a href="https://github.com/mariliab" target="_blank">
+                  Github
+                </a>
               </LinkWrapper>
             </NavItemGroup>
           </MobileMenuBody>
