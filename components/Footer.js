@@ -56,6 +56,7 @@ const SocialLinks = styled.div`
 const LinkWrapper = styled.div`
   > a {
     color: white;
+    text-decoration: none;
     :hover {
       color: #ddcdc1;
     }
