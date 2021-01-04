@@ -133,7 +133,7 @@ const Navbar = ({ data }) => {
           <MobileHeaderContainer>
             <Link href="/">
               <Logo>
-                M.B<span> portfolio</span>
+                MB<span> portfolio</span>
               </Logo>
             </Link>
             <BurgerMenu open={open} setOpen={setOpen} />
