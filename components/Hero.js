@@ -3,7 +3,7 @@ import styled from "styled-components";
 import React, { useState, useEffect } from "react";
 
 const Background = styled.div`
-  min-height: 90vh;
+  min-height: 66vh;
   background-image: linear-gradient(to bottom right, #ddcdc1, #ac8266);
 `;
 
