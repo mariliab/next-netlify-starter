@@ -4,17 +4,7 @@ import React, { useState, useEffect } from "react";
 
 const Background = styled.div`
   min-height: 90vh;
-  background-image: url(${(props) =>
-    props.backgroundImage ? props.backgroundImage : ""});
-  background-attachment: fixed;
-  background-position: initial;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-  @media (max-width: 767px) {
-    background-image: url(${(props) =>
-      props?.mobileBackgroundImage ? props?.mobileBackgroundImage : ""});
-  }
+  background-image: linear-gradient(to bottom right, #ddcdc1, #ac8266);
 `;
 
 const Container = styled.div`
@@ -59,10 +49,7 @@ const SubTitle = styled.h3`
 
 const Hero = ({ data }) => {
   return (
-    <Background
-      backgroundImage={data?.backgroundImage?.fields?.file?.url}
-      mobileBackgroundImage={data?.mobileBackgroundImage?.fields?.file?.url}
-    >
+    <Background>
       <Container>
         <TextContent>
           <ShortText>{data?.shortText}</ShortText>
